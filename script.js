@@ -6,13 +6,6 @@ By richiegecko513
 
 /*
 TODO LIST
--computerPlay function 
-    -randomly generate choice of r, p or s
-    -return the output
--gameRound function 
-    -take user input for playerSelection choice
-    -take output from computerPlay for computerSelection choice
-    -return a string declaring winner
 -game() function
     -called gameRound within this one to play multiple rounds
     -keep score of winners for 5 rounds
@@ -30,8 +23,7 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection){
-   // let playerSelection = prompt("Rock,paper or scissors?")
-    //console.log(playerSelection)
+
     switch(playerSelection){
         case 'rock':
             if(computerSelection == "Paper"){
@@ -73,10 +65,42 @@ function playRound(playerSelection, computerSelection){
     }
 
 }
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+let playerWin = []
+let compWin = []
 
 function game(){
-
+    for(let i = 0; i < 5; i++){
+        let playerSelection = prompt("Rock paper or scissors?")
+        console.log(playerSelection)
+        let computerSelection = computerPlay();
+        console.log(computerSelection)
+        playRound(playerSelection,computerSelection)
+        switch(response){
+            case "You win!":
+                playerWin.push(1)
+                console.log("You win the game!")
+                break;
+            case "You lose!":
+                compWin.push(1)
+                console.log("You lose the game!")
+                break;
+            case "It's a tie!":
+                console.log("It's a tie!")
+                break;
+        
+       }
+    }
+    if(playerWin > compWin){
+        response = "You have won!"
+        return response
+    }else{
+        response = "You have lost!"
+        return response
+    }
+   
 }
+//const playerSelection = prompt("Rock, paper, scissors?")
+
+//const computerSelection = computerPlay();
+
+console.log(game())
