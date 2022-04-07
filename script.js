@@ -4,13 +4,7 @@ By richiegecko513
 22-04-05
 */
 
-/*
-TODO LIST
--game() function
-    -called gameRound within this one to play multiple rounds
-    -keep score of winners for 5 rounds
-    -whoever has most wins is declared winner
-*/
+
 
 const weapon = ['Rock','Paper','Scissors']
 let response
