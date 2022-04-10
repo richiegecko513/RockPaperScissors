@@ -12,12 +12,13 @@ TODO LIST
     -whoever has most wins is declared winner
 */
 
-const weapon = ['Rock','Paper','Scissors']
+
 let response
 let win
 let lose 
 
 function computerPlay() {
+    const weapon = ['Rock','Paper','Scissors']
     choice = weapon[Math.floor(Math.random() * weapon.length)]
     return choice
 }
