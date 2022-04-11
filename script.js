@@ -12,6 +12,7 @@ Display the running score, and announce a winner of the game once one player rea
 
 const buttons = document.querySelectorAll('button');
 const resultDiv = document.querySelector('.result')
+const buttonDiv = document.querySelector('.buttonDiv')
 
 roundResult = document.createElement('p')
 resultDiv.appendChild(roundResult)
@@ -19,12 +20,15 @@ const playerScore = document.querySelector('#playerScore')
 const compScore = document.querySelector('#compScore')
 resultDiv.appendChild(playerScore)
 resultDiv.appendChild(compScore)
+playerScore.style.cssText = 'size: 25px;'
+compScore.style.cssText = 'size:25px;'
 const finalResult = document.createElement('p')
 resultDiv.appendChild(finalResult)
 
 const newGame = document.createElement('button')
-resultDiv.appendChild(newGame)
-
+newGame.textContent = "Restart"
+buttonDiv.appendChild(newGame)
+newGame.style.visibility="hidden";
 let playWin = 0;
 let compWin = 0;
 
@@ -79,6 +83,7 @@ function playRound(playerSelection){
             }
             else
             {
+                
                 response = "It's a tie!"
             }
             break
@@ -114,24 +119,30 @@ function playRound(playerSelection){
     return runningScore(response)
 }
 
+function playNewGame() {
+    newGame.addEventListener('click', () => {
+        window.location.reload()
+    })
+}
+
 //keeps a running count of the score 
 function runningScore(response)
 {
     switch(response){
         case "You win!":
             playWin++
-            playerScore.textContent = `Player score= ${playWin}`
-            compScore.textContent = `Computer score= ${compWin}`
+            playerScore.textContent = `Player Score= ${playWin}`
+            compScore.textContent = `Computer Score= ${compWin}`
             break;
         case "You lose!":
             compWin++
-            playerScore.textContent = `Player score= ${playWin}`
-            compScore.textContent = `Computer score= ${compWin}`
+            playerScore.textContent = `Player Score= ${playWin}`
+            compScore.textContent = `Computer Score= ${compWin}`
             break;
         case "It's a tie!":
             console.log("It's a tie!")
-            playerScore.textContent = `Player score= ${playWin}`
-            compScore.textContent = `Computer score= ${compWin}`
+            playerScore.textContent = `Player Score= ${playWin}`
+            compScore.textContent = `Computer Score= ${compWin}`
             break;
     }
 }
@@ -150,12 +161,16 @@ function winner()
             {
                 finalResult.textContent = "You won the game!"
                 disableButtons()
+                newGame.style.visibility="visible";
+                playNewGame()
                 
             }
             if(compWin > playWin)
             {
                 finalResult.textContent = "You lost to a computer!"
                 disableButtons()
+                newGame.style.visibility="visible";
+                playNewGame()
             }
         }
 }
@@ -173,4 +188,4 @@ function game(){
 
 }
 
-console.log(game())
+game()
