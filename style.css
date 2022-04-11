@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Roboto, 'sans-serif';
+     color: white;
+     
+   
+ }
+ body{
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+   background-color: #30415d;
+ }
+ .main{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   gap: 15px;
+   
+ }
+ 
+ button{
+   display: inline-block;
+   padding: 0.3em;
+   height: 50px;
+   width: 100px;
+   margin: 0 0.3em 0.3em 0;
+   border-radius: 20px;
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 300;
+   font-size: 20px;
+   color: #FFFFFF;
+   background-color: #8eaebd;
+   text-align: center;
+   transition: all 0.2s;
+ }
+ 
+ button:disabled{
+     background: #dddddd;
+ }
+
+ .result{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 30 0 30 0;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   gap: 15px;
+ }
+
+ .result>h3{
+   font-size: 38px;
+ }
+
+ .header{
+   display: flex;
+   background-color: #031424;
+   color: #FFFFFF;
+   padding-bottom: 30px;
+   justify-content: center;
+ }
+
+ #title{
+   padding-top: 30px;
+   background-color: #031424;
+ }
+
+.buttonDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.footer{
+  text-align: center;
+  padding: 35px 0;
+  background-color: #031424;
+  color: #FFFFFF;
+}
+.site_content{
+  flex: 1;
+
+}
